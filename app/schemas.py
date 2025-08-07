@@ -1,8 +1,10 @@
 from pydantic import BaseModel
-from typing import Dict
 
 class PredictionRequest(BaseModel):
-    features: Dict[str, float]
+    royalties_last_6_months: float
+    instagram_followers: int
+    track_release_count: int
+    sentiment_score: float
 
 class PredictionResponse(BaseModel):
-    prediction: float
+    estimated_advance: float
